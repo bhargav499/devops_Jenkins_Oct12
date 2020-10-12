@@ -55,4 +55,25 @@ git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
 echo "Bannana Shake" | git hash-object --stdin -w
 git cat-file f10d03c5ab66794c28c07e582527bebee8ed2d7f -p
 ```
-
+### Git Diff. 
+```
+   59  git diff 51e2a1b..10a7e2d
+   60  ls
+   61  mkdir  Hello_World
+   62  echo "Hello World" > Hello_World/helloworld.txt
+   63  git status
+   64  git add .
+   65  git status
+   66  git commit -m "New Dir Hello_World"
+   67  git log
+   68  git diff 6a47bd..51e2a1b
+   69  git diff HEAD~1
+   70  git diff HEAD~2
+   71  git diff HEAD~3
+   72  git diff HEAD~4
+   73  git diff HEAD~5
+   74  ls
+   75  git diff HEAD~2..HEAD~3
+   76  git show HEAD
+   77  git log
+```
