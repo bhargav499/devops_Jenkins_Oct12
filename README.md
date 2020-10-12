@@ -34,3 +34,25 @@ git commit -m "New file - Hello.txt"
 git log
 git push
 ```
+
+### Git Global Config 
+```
+git config --global user.name "Amit Vashist"
+git config --global user.email "amitvashist7@outlook.com"
+git config --list 
+```
+
+
+### Git Object Storage
+```
+echo "Apple Pie" | git hash-object --sidin
+echo "Apple Pie" | git hash-object --stdin
+echo "Apple Pie" | git hash-object --stdin -w
+ls -ltr .git/objects/
+ls -ltr .git/objects/23/
+git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -t
+git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
+echo "Bannana Shake" | git hash-object --stdin -w
+git cat-file f10d03c5ab66794c28c07e582527bebee8ed2d7f -p
+```
+
