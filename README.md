@@ -178,3 +178,30 @@ git cat-file f10d03c5ab66794c28c07e582527bebee8ed2d7f -p
   176  git clean -f temp2/*
 
 ```
+
+
+
+### Git Credential Helper
+```
+ 209  git config credential.helper store
+  210  git push https://github.com/amitvashisttech/devops-accenture-2020Oct12.git
+
+```
+
+### Git Logging
+
+```
+233  git clone https://github.com/jquery/jquery.git
+  234  ls
+  235  cd jquery/
+  236  ls
+  237  git log
+  238  git log --oneline
+  239  git log --oneline | wc -l
+  240  git log --oneline --graph
+  241  git log --shortlog
+  242  git shortlog
+  243  git shortlog -sne
+
+
+```
