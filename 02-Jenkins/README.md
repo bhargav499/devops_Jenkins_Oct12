@@ -27,3 +27,17 @@
 ### http://MasterNodeIP:9090
 ### Supply the initialadminPassword 
 ### Install Suggested Plugins
+
+
+## Maven Package Build Manually 
+
+```
+apt-get install maven -y 
+mvn --version 
+git pull 
+cd 02-Jenkins/petclinic-code
+mvn clean 
+mvn compile 
+mvn test
+mvn package
+```
