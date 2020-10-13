@@ -13,7 +13,7 @@
 ## Setup Jenkins to run on custom port : 9090
 
 ```
-  java -jar jenkins.war --httpPort=9090 & 
+  java -jar /root/jenkins.war --httpPort=9090 & 
 ```
 
 ## Get the initial Credentials
