@@ -85,3 +85,335 @@
    85  cd 03-Docker/
    86  ls
    87  history > Day3_History.txt 
+   88  cd ..
+   89  ls
+   90  git add . ; git commit -m "Docker-History"; git push 
+   91  history 
+   92  ls
+   93  docker ps 
+   94  docker ps -a 
+   95  docker images 
+   96  docker rmi busybox
+   97  docker images 
+   98  ls
+   99  docker run -it centos:7 
+  100  docker ps 
+  101  docker attach 38e093ce7947
+  102  docker ps 
+  103  docker inspect 38e093ce7947
+  104  curl localhost
+  105  ip addr 
+  106  curl 172.17.0.2
+  107  curl 172.17.0.2/info.html
+  108  ls
+  109  docker ps 
+  110  docker stop 38e093ce7947
+  111  docker ps 
+  112  curl 172.17.0.2/info.html
+  113  ls
+  114  docker ps 
+  115  docker ps -a 
+  116  docker start 38e093ce7947
+  117  docker ps 
+  118  curl 172.17.0.2/info.html
+  119  docker attach  38e093ce7947
+  120  curl 172.17.0.2/info.html
+  121  ls
+  122  docker exec 38e093ce7947 ps aux
+  123  docker attach  38e093ce7947
+  124  curl 172.17.0.2/info.html
+  125  docker start 38e093ce7947
+  126  curl 172.17.0.2/info.html
+  127  docker ps 
+  128  docker inspect 38e093ce7947
+  129  curl 172.17.0.2
+  130  docker ps 
+  131  docker attach 38e093ce7947
+  132  docker ps 
+  133  docker commit -p -m "My Httpd WebServer" 38e093ce7947 centos-test-httpd:v1
+  134  docker images 
+  135  docker run -itd centos-test-httpd /bin/bash
+  136  docker run -itd centos-test-httpd:v1 /bin/bash
+  137  docker ps 
+  138  curl 172.17.0.3
+  139  curl 172.17.0.2
+  140  curl 172.17.0.3
+  141  ls
+  142  docker ps 
+  143  docker attach 04740620eabb
+  144  ls
+  145  docker run -it centos-test-httpd:v1 /bin/bash
+  146  curl 172.17.0.3
+  147  curl 172.17.0.3/info.html
+  148  docker run -itd centos-test-httpd:v1 /bin/bash
+  149  docker ps 
+  150  curl 172.17.0.4
+  151  docker run -it centos-test-httpd:v1 /bin/bash
+  152  docker commit -p -m "My Httpd WebServer" e4dcd0e7823d  centos-test-httpd:v2
+  153  docker run -itd centos-test-httpd:v2 /bin/bash
+  154  docker ps 
+  155  docker inspect e86d6cb47757
+  156  curl 172.17.0.6
+  157  ls
+  158  docker run -it centos-test-httpd:v2 /bin/bash
+  159  curl 172.17.0.2
+  160  curl 172.17.0.7
+  161  curl 172.17.0.6
+  162  docker ps 
+  163  docker inspect 9cba4950c457
+  164  curl 172.17.0.7
+  165  curl 172.17.0.7/info.html
+  166  docker ps 
+  167  docker attach 9cba4950c457 
+  168  docker images 
+  169  docker run -it centos-test-httpd:v2 /bin/bash
+  170  docker commit -p -m "My Httpd WebServer" 4681afa7d80c  centos-test-httpd:v3
+  171  docker run -itd centos-test-httpd:v3 /bin/bash
+  172  docker ps 
+  173  docker exec 49b0575b5be8 ps aux 
+  174  docker inspect 49b0575b5be8
+  175  curl 172.17.0.9
+  176  ls
+  177  docker kill $(docker ps -qa)
+  178  docker rm $(docker ps -qa)
+  179  docker images 
+  180  docker run -itd  --name test-web-01 centos-test-httpd:v3 /bin/bash
+  181  docker run -itd  --name test-web-02 centos-test-httpd:v3 /bin/bash
+  182  docker ps 
+  183  docker exec test-web-01 ps aux 
+  184  docker exec test-web-02 ps aux 
+  185  curl 172.17.0.2/info.html
+  186  curl 172.17.0.3/info.html
+  187  ls
+  188  docker images 
+  189  ls
+  190  cd 03-Docker/
+  191  ls
+  192  mkdir 01-First-Image
+  193  cd 01-First-Image/
+  194  ls
+  195  history 50
+  196  history 50 > README.md
+  197  vim README.md 
+  198  ls
+  199  cd ..
+  200  ls
+  201  git add . ; git commit -m "Docker-First Image"; git push 
+  202  ls
+  203  cd 03-Docker/
+  204  ls
+  205  mkdir 02-Dockerfile
+  206  cd 02-Dockerfile/
+  207  ls
+  208  mkdir apache
+  209  ls
+  210  cd apache/
+  211  ls
+  212  vim Dockerfile
+  213  sl
+  214  ls
+  215  docker build -t my-ubuntu-16-apache:v1 .
+  216  ls
+  217  docker images 
+  218  docker run -it ubuntu:16.04 
+  219  docker images 
+  220  docker run -d --name test-ubuntu-web-01 my-ubuntu-16-apache:v1
+  221  docker ps 
+  222  cat Dockerfile 
+  223  docker inspect 1c96670928e3
+  224  curl 172.17.0.4
+  225  ls
+  226  cd ..
+  227  ls
+  228  cp -rf apache apache-v2
+  229  mv apache apache-v1
+  230  ls
+  231  cd apache-v2/
+  232  ls
+  233  vim amit.html
+  234  ls
+  235  vim Dockerfile 
+  236  ls
+  237  docker build -t my-ubuntu-16-apache:v2 .
+  238  docker images 
+  239  docker run -d --name test-ubuntu-web-02 my-ubuntu-16-apache:v2
+  240  docker ps 
+  241  curl 172.17.0.5
+  242  curl 172.17.0.5/hello.html
+  243  cd ..
+  244  ls
+  245  vim README.md
+  246  sl
+  247  ks
+  248  cd ls
+  249  cd ../../
+  250  git add . ; git commit -m "DockerFile"; git push 
+  251  history 
+  252  ls
+  253  cd 03-Docker/
+  254  ls
+  255  cd 02-Dockerfile/
+  256  ls
+  257  mkdir python-webapp
+  258  cd python-webapp/
+  259  ls
+  260  vim requirement.txt
+  261  vim app.py 
+  262  ls
+  263  mkdir code
+  264  ls
+  265  mv * code/
+  266  ls
+  267  vim Dockerfile
+  268  ls -ltr code/
+  269  docker build -t my-python-webapp:v1 .
+  270  vim Dockerfile 
+  271  docker build -t my-python-webapp:v1 .
+  272  ls
+  273  docker images 
+  274  docker ps 
+  275  docker images 
+  276  docker run -d --name my-python-webapp-01 my-python-webapp:v1 
+  277  docker ps 
+  278  docker inspect b25f68298132
+  279  curl 172.17.0.6
+  280  curl 172.17.0.6:8081
+  281  curl 172.17.0.4
+  282  ls
+  283  cat Dockerfile 
+  284  cat code/app.py 
+  285  ls
+  286  cd ..
+  287  ls
+  288  mv python-webapp python-webapp-v1
+  289  cp -rf python-webapp-v1 python-webapp-v2
+  290  ls
+  291  cd python-webapp-v2/
+  292  ls
+  293  vim Dockerfile 
+  294  sl
+  295  ls
+  296  vim code/app.py 
+  297  ls
+  298  docker build -t my-python-webapp:v2 .
+  299  ls
+  300  docker images 
+  301  docker run -d --name my-python-webapp-02 my-python-webapp:v2
+  302  docker ps 
+  303  docker inspect b0207fbf784b
+  304  curl 172.17.0.7
+  305  curl 172.17.0.7:8081
+  306  curl 172.17.0.7:5000
+  307  ls
+  308  cd ..
+  309  ls
+  310  cd ..
+  311  ls
+  312  git add . ; git commit -m "DockerFile-Python-v2"; git push 
+  313  ls
+  314  cd 03-Docker/
+  315  ls
+  316  cd 02-Dockerfile/
+  317  ls
+  318  cp -rf python-webapp-v2 python-webapp-v3
+  319  ls
+  320  cd python-webapp-v
+  321  cd python-webapp-v3/
+  322  ls
+  323  vim code/app.py 
+  324  ls
+  325  vim Dockerfile 
+  326  ls
+  327  docker build -t my-python-webapp:v3 .
+  328  ls
+  329  docker run -d -P --name my-python-webapp-03 my-python-webapp:v3
+  330  docker ps 
+  331  ls
+  332  vim code/app.py 
+  333  docker build -t my-python-webapp:v4 .
+  334  docker run -d -P --name my-python-webapp-04 my-python-webapp:v4
+  335  docker ps 
+  336  ls
+  337  cd code/
+  338  ls
+  339  vim app.py 
+  340  docker build -t my-python-webapp:v4 .
+  341  cd ..
+  342  ls
+  343  docker build -t my-python-webapp:v4 .
+  344  docker run -d -P --name my-python-webapp-05 my-python-webapp:v4
+  345  docker ps 
+  346  docker images 
+  347  docker build -t my-python-webapp:v5 .
+  348  docker run -d -P --name my-python-webapp-06 my-python-webapp:v5
+  349  docker ps 
+  350  ls
+  351  cd ..
+  352  ls
+  353  docker images 
+  354  docker rmi my-python-webapp:v4 my-python-webapp:v5
+  355  ls
+  356  vim python-webapp-v3/
+  357  ls
+  358  cd python-webapp-v3/
+  359  ls
+  360  vim code/app.py 
+  361  docker images 
+  362  docker rmi 0f70b632cec9 4731f4fc0893
+  363  docker kill $(docker ps -aq) 
+  364  docker rmi 0f70b632cec9 4731f4fc0893
+  365  docker rmi 0f70b632cec9 4731f4fc0893 --force
+  366  ls
+  367  docker images 
+  368  docker rmi my-python-webapp:v3
+  369  docker rmi my-python-webapp:v3 --force
+  370  ls
+  371  docker images 
+  372  ls
+  373  docker build -t my-python-webapp:v3 .
+  374  ls
+  375  docker images 
+  376  docker run -d -P --name my-python-webapp-07 my-python-webapp:v3
+  377  docker ps 
+  378  ls
+  379  cat code/app.py 
+  380  ls
+  381  docker images 
+  382  docker run -d --name test-01 my-python-webapp:v2
+  383  docker ps 
+  384  docker inspect 8f98883bfc64
+  385  curl 172.17.0.3:5000
+  386  curl 172.17.0.3:5000/amit 
+  387  curl 172.17.0.3:5000
+  388  ip addr 
+  389  docker ps 
+  390  docker kill $(docker ps -aq )
+  391  docker rm $(docker ps -aq )
+  392  ls
+  393  cd 
+  394  ls
+  395  docker images 
+  396  docker run -d --name myapp-python-test-01 my-python-webapp:v3
+  397  docker ps 
+  398  curl localhost:5001
+  399  ip addr 
+  400  curl 172.17.0.2:5001
+  401  docker ps 
+  402  netstat -tulnp 
+  403  docker run -d -p 5005:5001 --name myapp-python-test-02 my-python-webapp:v3
+  404  netstat -tulnp 
+  405  curl localhost:5001
+  406  curl localhost:5005
+  407  docker run -d -P --name myapp-python-test-03 my-python-webapp:v3
+  408  docker ps 
+  409  netstat -tulnp 
+  410  curl localhost:32773
+  411  iptables -L
+  412  ls
+  413  cd devops-accenture-2020Oct12/
+  414  ls
+  415  history 
+  416  ls
+  417  cd 03-Docker/
+  418  ls
+  419  history > Day3_History.txt 
