@@ -1,0 +1,400 @@
+    1  ls
+    2  exit
+    3  git clone https://github.com/amitvashisttech/devops-accenture-2020Oct12.git
+    4  ls
+    5  cd devops-accenture-2020Oct12/
+    6  ls
+    7  git config 
+    8  git config --list 
+    9  git config --help 
+   10  git config --global user.name "Amit Vashist"
+   11  git config --global user.email "amitvashist7@outlook.com"
+   12  git config --list 
+   13  ls -a 
+   14  cd
+   15  ls
+   16  ls -a 
+   17  cat .gitconfig 
+   18  ls
+   19  cd - 
+   20  ls
+   21  git log 
+   22  ls
+   23  cat Hello.txt 
+   24  echo "Hello Again" > Hello.txt 
+   25  git status 
+   26  git commit -m "Modify - Hello.txt"
+   27  git add  Hello.txt ; git commit -m "Modify - Hello.txt"
+   28  git log 
+   29  ls
+   30  ls 
+   31  ls -a 
+   32  cd .git/
+   33  ls
+   34  cd objects/
+   35  ls
+   36  cd ..
+   37  ls
+   38  c d..
+   39  ls
+   40  cd ..
+   41  ls
+   42  echo "Apple Pie" | git hash-object --sidin 
+   43  echo "Apple Pie" | git hash-object --stdin 
+   44  echo "Apple Pie" | git hash-object --stdin -w
+   45  ls -ltr .git/objects/
+   46  ls -ltr .git/objects/23/
+   47  git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -t
+   48  git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
+   49  echo "Bannana Shake" | git hash-object --stdin -w
+   50  git cat-file f10d03c5ab66794c28c07e582527bebee8ed2d7f -p
+   51  ls
+   52  history 
+   53  ls
+   54  vim README.md 
+   55  ls
+   56  git add . ; git commit -m "Updated README" ; git push 
+   57  ls
+   58  git log
+   59  git diff 51e2a1b..10a7e2d
+   60  ls
+   61  mkdir  Hello_World
+   62  echo "Hello World" > Hello_World/helloworld.txt
+   63  git status 
+   64  git add .
+   65  git status 
+   66  git commit -m "New Dir Hello_World"
+   67  git log
+   68  git diff 6a47bd..51e2a1b
+   69  git diff HEAD~1
+   70  git diff HEAD~2
+   71  git diff HEAD~3
+   72  git diff HEAD~4
+   73  git diff HEAD~5
+   74  ls
+   75  git diff HEAD~2..HEAD~3
+   76  git show HEAD
+   77  git log 
+   78  history 
+   79  vi README.md 
+   80  ls
+   81  git add . ; git commit -m "New Dir Hello_World"; git push 
+   82  ls
+   83  mv Hello_World HelloWorld
+   84  ls
+   85  rm -rf Hello.txt 
+   86  git status 
+   87  git add . 
+   88  git status 
+   89  git commit -m "Hello File has been removed & Dir has been Renamed"
+   90  ls
+   91  vim README.md 
+   92  ls
+   93  cat README.md 
+   94  vim README.md 
+   95  git status 
+   96  git checkout README.md
+   97  git status 
+   98  vim README.md 
+   99  ls
+  100  git checkout 
+  101  rm -rf HelloWorld
+  102  git status 
+  103  git checkout 
+  104  git status 
+  105  git checkout 
+  106  git checkout main
+  107  git log 
+  108  ls
+  109  git log 
+  110  git checkout 
+  111  ls
+  112  git reset
+  113  ls
+  114  git reset --soft HEAD
+  115  ls
+  116  git reset --soft HEAD~1
+  117  ls
+  118  git status 
+  119  git commit -m "Redo"
+  120  ls
+  121  git commit -m "Redo"
+  122  git status 
+  123  ls
+  124  git reset --hard HEAD~1
+  125  ls
+  126  git status 
+  127  ls
+  128  mv Hello_World HelloWorld
+  129  git status 
+  130  git add . ; git commit -m "Undo with Hard Rest"
+  131  git log 
+  132  ls
+  133  mkdir temp
+  134  for i in "01..10"; do echo "Hello Temp $i" > temp/temp-file_$i.txt; done 
+  135  ls
+  136  apt-get install tree -y 
+  137  tree .
+  138  for i in {01..10}; do echo "Hello Temp $i" > temp/temp-file_$i.txt; done 
+  139  tree .
+  140  cat temp/temp-file_01.txt 
+  141  cat temp/temp-file_02.txt 
+  142  ls
+  143  git add . ; git commit -m "Added Couple of Temp files"
+  144  git log 
+  145  git diff HEAD~1
+  146  ls
+  147  git clean -f temp/* 
+  148  tree temp/
+  149  git status 
+  150  git add . 
+  151  git status 
+  152  git clean -f temp/temp-file_01.txt 
+  153  ls -ltr temp/
+  154  git clean --help
+  155  s
+  156  ls
+  157  mkdir temp2
+  158  ls
+  159  for i in {01..10}; do echo "Hello Temp $i" > temp2/temp-file_$i.txt; done 
+  160  tree temp2/
+  161  ls
+  162  git clean temp2/temp-file_01.txt 
+  163  git clean -f temp2/temp-file_01.txt 
+  164  git clean 
+  165  git clean -f 
+  166  ls
+  167  cd temp
+  168  cd ..
+  169  ls
+  170  cd temp2/
+  171  ls
+  172  cd ..
+  173  ls
+  174  git clean -n 
+  175  git clean -n --help 
+  176  git clean -f temp2/* 
+  177  ls
+  178  history 
+  179  ls
+  180  vim README.md 
+  181  ls
+  182  git add . ; git commit -m "Added Couple of Temp files" ; git push 
+  183  git config --global user.password "test@123"
+  184  git pusj 
+  185  git push 
+  186  ls
+  187  cd 
+  188  ls
+  189  cat .gitconfig 
+  190  ls
+  191  cd devops-accenture-2020Oct12/
+  192  ls
+  193  git config crednetial.helper store 
+  194  git push 
+  195  ls
+  196  echo "Hello Again 2" >> Hello
+  197  ls
+  198  git add . ; git commit -m "Hello"; git push 
+  199  ls
+  200  cd 
+  201  ls
+  202  ls -a 
+  203  cd devops-accenture-2020Oct12/
+  204  ls
+  205  git config crednetial.helper store 
+  206  git config --list 
+  207  git push https://github.com/amitvashisttech/devops-accenture-2020Oct12.git
+  208  ls -a /root/
+  209  git config credential.helper store
+  210  git push https://github.com/amitvashisttech/devops-accenture-2020Oct12.git
+  211  ls -a /root/
+  212  ls
+  213  echo "hello Again 3" > Hello
+  214  git add . ; git commit -m "Hello"; git push 
+  215  ls
+  216  history 
+  217  vim README.md 
+  218  ls
+  219  cd ..
+  220  ls
+  221  git clone https://github.com/amitvashisttech/docker-k8s-ericsson-07Oct2020.git
+  222  ls
+  223  cd docker-k8s-ericsson-07Oct2020/
+  224  git log
+  225  git log --oneline
+  226  git log --oneline | wc  -l 
+  227  git log --oneline --graph 
+  228  ls
+  229  cd ..
+  230  ls
+  231  rm docker-k8s-ericsson-07Oct2020/
+  232  rm -rf docker-k8s-ericsson-07Oct2020/
+  233  git clone https://github.com/jquery/jquery.git
+  234  ls
+  235  cd jquery/
+  236  ls
+  237  git log
+  238  git log --oneline 
+  239  git log --oneline | wc -l 
+  240  git log --oneline --graph 
+  241  git log --shortlog 
+  242  git shortlog 
+  243  git shortlog -sne
+  244  ls
+  245  cd ..
+  246  s
+  247  ls
+  248  cd devops-accenture-2020Oct12/
+  249  ls
+  250  history 
+  251  vim README.md 
+  252  git add . ; git commit -m "Git Loging"; git push 
+  253  git
+  254  git branch
+  255  git branch prod
+  256  git branch
+  257  git branch -r prod 
+  258  git branch -r 
+  259  git branch delete prod 
+  260  git branch
+  261  git branch --help 
+  262  git branch -d delete prod 
+  263  git branch
+  264  cat .git/branches/
+  265  cd  .git/branches/
+  266  ls
+  267  cd ..
+  268  ls
+  269  cd ..
+  270  ls
+  271  git log 
+  272  git showhead
+  273  git show HEAD
+  274  git branch UAT 
+  275  ls
+  276  git branch 
+  277  git checkout UAT
+  278  git branch 
+  279  ls
+  280  rm -rf temp* 
+  281  ls
+  282  mkdir UAT
+  283  echo "This is our UAT Branch" > UAT/hello.txt
+  284  git add . 
+  285  git status 
+  286  git commit -m "Initial Commit in UAT" 
+  287  git log 
+  288  git show HEAD 
+  289  git branch 
+  290  ls
+  291  cd .git/
+  292  ls
+  293  cat HEAD 
+  294  cat branches/
+  295  ls  branches/
+  296  ls
+  297  cd ..
+  298  ls
+  299  git push 
+  300  git config --list 
+  301  git push --set-upstream origin UAT
+  302  git config --list 
+  303  git branch 
+  304  git checkout 
+  305  git branch 
+  306  git checkout main
+  307  git branch 
+  308  ls
+  309  git log --oneline --graph 
+  310  cat .git/HEAD 
+  311  cat .git/refs/heads/main 
+  312  git checkout UAT
+  313  cat .git/HEAD 
+  314  cat .git/refs/heads/UAT
+  315  git log --oneline --graph 
+  316  git log  --graph 
+  317  ls
+  318  git checkout main
+  319  ls
+  320  mkdir main 
+  321  echo "This is our UAT Branch" > main/hello.txt
+  322  git add . ; git commit -m "Main" ; git push 
+  323  git log  --graph 
+  324  ls
+  325  echo "This is our Main Branch" > main/hello.txt
+  326  git add . ; git commit -m "Main" ; git push 
+  327  ls
+  328  git branch prod
+  329  ls
+  330  git checkout prod
+  331  mkdir prod
+  332  echo "This is our PROD Branch" > prod/hello.txt
+  333  git add . ; git commit -m "Main" ; git push 
+  334  git push --set-upstream origin prod
+  335  git add . ; git commit -m "Main" ; git push 
+  336  ls
+  337  rm -rf main
+  338  git add . ; git commit -m "Main" ; git push 
+  339  ls
+  340  git branch 
+  341  git checkout main 
+  342  git checkout main ls
+  343  git branch 
+  344  git merge UAT
+  345* 
+  346  git merge prod
+  347  git branch 
+  348  ls
+  349  git log  --graph 
+  350  ls
+  351  git fetch 
+  352  git log
+  353  ls
+  354  git branch 
+  355  git fetch 
+  356  ls
+  357  git status 
+  358  git pull 
+  359  ls
+  360  git logs 
+  361  git log
+  362  git push 
+  363  git log
+  364  ls
+  365  cat Testing_Git_Pull 
+  366  git fetch 
+  367  ls
+  368  cat Testing_Git_Pull 
+  369  git log 
+  370  git fetch origin/main 
+  371  ls
+  372  git pull 
+  373  ls
+  374  cat Testing_Git_Pull 
+  375  git log 
+  376  ls
+  377  history 
+  378  ls
+  379  git tag
+  380  git tag release_v1
+  381  git tag
+  382  git push --tags 
+  383  ls
+  384  rm -rf UAT prod 
+  385  ls
+  386  rm Testing_Git_Pull 
+  387  ls
+  388  git add . ; git commit -m "New Devlopment- v2" ; git push 
+  389  ls
+  390  git tag release_v2
+  391  git push --tags
+  392  ls
+  393  git log 
+  394  ls
+  395  mv HelloWorld Welcome_to_GIT
+  396  git add . ; git commit -m "New Dir Welcome_to_GIT" ; git push 
+  397  ls
+  398  history 
+  399  ls
+  400  history > Welcome_to_GIT/Day01-History.txt
