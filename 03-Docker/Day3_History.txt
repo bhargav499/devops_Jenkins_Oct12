@@ -28,3 +28,60 @@
    28  cd 03-Docker/
    29  ls
    30  history > Day3_History.txt
+   31  cd ..
+   32  git add . ; git commit -m "Docker-First-Container"; git push 
+   33  ls
+   34  docker search ubuntu:16.04
+   35  docker search ubuntu
+   36  docker images 
+   37  docker pull ubuntu:16.04
+   38  docker images 
+   39  ls
+   40  docker ps 
+   41  docker ps -a 
+   42  docker container ls 
+   43  docker container ls -a
+   44  docker ps 
+   45  docker images 
+   46  docker run -it ubuntu:16.04 
+   47  docker run -it ubuntu
+   48  docker imags 
+   49  docker images 
+   50  ls
+   51  docker images 
+   52  docker ps 
+   53  docker run -it centos/7
+   54  docker run -it centos:7
+   55  docker ps 
+   56  docker run -it ubuntu
+   57  docker ps 
+   58  docker stop  34eb3cd642f4
+   59  history 
+   60  ls
+   61  docker ps 
+   62  docker run -it --name myapp01 ubuntu
+   63  docker ps 
+   64  docker run -itd ubuntu
+   65  docker ps 
+   66  docker run -it --name myapp01 ubuntu
+   67  docker run -itd --name myapp02 ubuntu
+   68  docker run -itd --name myapp03 ubuntu
+   69  docker run -itd --name myapp43 ubuntu
+   70  docker ps 
+   71  ls
+   72  docker ps 
+   73  docker ps -q
+   74  docker kill $(docker ps -q)
+   75  docker ps 
+   76  docker ps -a 
+   77  docker start myapp01
+   78  docker ps 
+   79  docker kill $(docker ps -q)
+   80  docker ps -a 
+   81  docker ps -aq 
+   82  docker rm $(docker ps -aq ) 
+   83  docker ps -a 
+   84  ls
+   85  cd 03-Docker/
+   86  ls
+   87  history > Day3_History.txt 
