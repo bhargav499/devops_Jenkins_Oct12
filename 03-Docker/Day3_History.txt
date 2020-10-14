@@ -417,3 +417,151 @@
   417  cd 03-Docker/
   418  ls
   419  history > Day3_History.txt 
+  420  cd ..
+  421  ls
+  422  git add . ; git commit -m "DockerFile-Python-v2"; git push 
+  423  history 
+  424  ls
+  425  cd 03-Docker/
+  426  ls
+  427  cd 02-Dockerfile/
+  428  ls
+  429  mkdir petclinc 
+  430  ls
+  431  cd petclinc/
+  432  cd ..
+  433  ls
+  434  mv petclinc petclinic
+  435  ls
+  436  cd petclinic/
+  437  ls
+  438  vim Dockerfile
+  439  s
+  440  cat Dockerfile 
+  441  mkdir target 
+  442  ls
+  443  cp -rf /root/.jenkins/workspace/Petclinic-Pipeline/02-Jenkins/petclinic-code/target/petclinic.war target/
+  444  ls
+  445  cat target/
+  446  ls
+  447  docker build -t tomcat-petclinic:v1 .
+  448  vim Dockerfile 
+  449  docker build -t tomcat-petclinic:v1 .
+  450  docker images 
+  451  docker run -d -P --name tomcattest-01 tomcat-petclinic:v1
+  452  docker ps 
+  453  ls
+  454  du -sh  target/petclinic.war 
+  455  >  target/petclinic.war 
+  456  du -sh  target/petclinic.war 
+  457  cd ..
+  458  ls
+  459  cd ../../
+  460  ls
+  461  git add . ; git commit -m "DockerFile-Petclinic"; git push 
+  462  ls
+  463  cd 03-Docker/
+  464  ls
+  465  mkdir 04-DockerCompose/petclinic
+  466  mkdir 04-DockerCompose/petclinic -p 
+  467  ls
+  468  cd 04-DockerCompose/
+  469  sl
+  470  ls
+  471  vim compose-install.sh 
+  472  ls
+  473  chmod +x compose-install.sh 
+  474  ./compose-install.sh 
+  475  ls
+  476  rm -rf petclinic/
+  477  ls
+  478  cp -rf ../02-Dockerfile/petclinic . 
+  479  ls
+  480  cp -rf /root/.jenkins/workspace/Petclinic-Pipeline/02-Jenkins/petclinic-code/target/petclinic.war petclinic/target/
+  481  ls
+  482  cd petclinic/
+  483  ls
+  484  vim docker-compose.yaml
+  485  ls
+  486  docker-compose up -d 
+  487  docker images 
+  488  docker ps 
+  489  cd 
+  490  ls
+  491  cd devops-accenture-2020Oct12/
+  492  ls
+  493  cd - 
+  494  cd :~/devops-accenture-2020Oct12/03-Docker/04-DockerCompose/petclinic
+  495  cd ~/devops-accenture-2020Oct12/03-Docker/04-DockerCompose/petclinic
+  496  ls
+  497  docker-compose --help
+  498  docker-compose ps 
+  499  cd ..
+  500  docker-compose ps 
+  501  cd - 
+  502  docker-compose ps 
+  503  docker-compose kill 
+  504  docker-compose ps 
+  505  docker-compose rm
+  506  docker-compose rmi
+  507  docker images 
+  508  ls
+  509  > target/petclinic.war 
+  510  ls
+  511  cp -rf docker-compose.yaml ../../../02-Jenkins/petclinic-code/
+  512  cp -rf Dockerfile ../../../02-Jenkins/petclinic-code/
+  513  ls
+  514  cd ../../../
+  515  ls
+  516  cd 02-Jenkins/
+  517  ls
+  518  cd petclinic-code/
+  519  ls
+  520  cd ..
+  521  ls
+  522  cd ..
+  523  ls
+  524  du -sh * 
+  525  ls
+  526  git add . ; git commit -m "DockerCompose-Petclinic"; git push 
+  527  ls
+  528  git branch
+  529  git checkout jenkins
+  530  ls
+  531  cd Jenkins-CICD-Pipelines/
+  532  ls
+  533  cp -rf Jenkinfile 01-Jenkinfile
+  534  ls
+  535  mv 01-Jenkinfile 01-Jenkinfile-Archiva
+  536  cat 00-Jenkinfile 
+  537  ls
+  538  vim Jenkinfile 
+  539  git add . ; git commit -m "JenkinsPipeline Integrated with Docker"; git push 
+  540  ls
+  541  docker ps -aq 
+  542  docker kill $(docker ps -aq )
+  543  docker rm $(docker ps -aq )
+  544  docker images 
+  545  docker images | grep -i my
+  546  docker images | grep -i my| awk -F'{print $3}'
+  547  docker images | grep -i my| awk -F" " '{print $3}'
+  548  docker rmi $(docker images | grep -i my| awk -F" " '{print $3}')
+  549  docker rmi $(docker images | grep -i my| awk -F" " '{print $3}') --force
+  550  docker images 
+  551  docker rmi $(docker images | grep -i test| awk -F" " '{print $3}') --force
+  552  docker images 
+  553  docker rmi $(docker images | grep -i petclinic| awk -F" " '{print $3}') --force
+  554  docker images 
+  555  docker rmi 0bf18a857420
+  556  ls
+  557  docker images 
+  558  git status 
+  559  cd 
+  560  ls
+  561  cd devops-accenture-2020Oct12/
+  562  ls
+  563  git checkout main 
+  564  ls
+  565  cd 03-Docker/
+  566  ls
+  567  history > Day3_History.txt 
