@@ -207,3 +207,38 @@
   207  cd 04-Ansible/
   208  ls
   209  history > Day4_History
+  210  cd ..
+  211  git add . ; git commit -m "Ansible-Config-History"; git push 
+  212  ls
+  213  cd 04-Ansible/
+  214  ls
+  215  cd 03-Ansible-Config/Project-A/
+  216  ansible -m ping  
+  217  ansible all -m ping  
+  218  cat hosts 
+  219  lls
+  220  ls
+  221  cd ..
+  222  ls
+  223  cd ..
+  224  ls
+  225  cp -rf 03-Ansible-Config/Project-A 04-Playbook
+  226  ls
+  227  cd 04-Playbook/
+  228  ls
+  229  vim hosts
+  230  ls
+  231  vim playbook.yaml
+  232  ls
+  233  ansible-playbook playbook.yaml 
+  234  cat playbook.yaml 
+  235  vim playbook.yaml 
+  236  ansible-playbook playbook.yaml 
+  237  vim playbook.yaml 
+  238  ansible-playbook playbook.yaml 
+  239  vim playbook.yaml 
+  240  ansible-playbook playbook.yaml 
+  241  ls
+  242  cd ..
+  243  ls
+  244  history > Day4_History 
