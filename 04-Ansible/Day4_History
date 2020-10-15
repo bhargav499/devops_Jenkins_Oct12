@@ -242,3 +242,54 @@
   242  cd ..
   243  ls
   244  history > Day4_History 
+  245  cd ..
+  246  ls
+  247  git add . ; git commit -m "Ansible-Playbook"; git push 
+  248  ls
+  249  cd 04-Ansible/
+  250  ls
+  251  cp -rf 04-Playbook 05-Deployment
+  252  ls
+  253  cd 05-Deployment/
+  254  ls
+  255  vim playbook.yaml 
+  256  ls
+  257  vim playbook.yaml 
+  258  ls
+  259  mkdir files 
+  260  ls
+  261  echo "Welecome to the world of Ansible" > files/index.html
+  262  ls
+  263  ansible-playbook playbook.yaml 
+  264  ls
+  265  kls
+  266  ls
+  267  mkdir templates
+  268  ls
+  269  vim templates/info.j2
+  270  ls
+  271  vim playbook.yaml 
+  272  ls
+  273  ansible-playbook playbook.yaml 
+  274  ls
+  275  vim playbook.yaml 
+  276  ls
+  277  vim templates/info.j2 
+  278  ls
+  279  ansible 172.31.0.101 -m setup 
+  280  ls
+  281  ansible-playbook playbook.yaml 
+  282  ls
+  283  vim playbook.yaml 
+  284  ls
+  285  vim templates/info.j2 
+  286  ansible-playbook playbook.yaml 
+  287  ls
+  288  vim playbook.yaml 
+  289  sl
+  290  ls
+  291  ansible-playbook playbook.yaml 
+  292  ls
+  293  cd ..
+  294  ls
+  295  history > Day4_History 
