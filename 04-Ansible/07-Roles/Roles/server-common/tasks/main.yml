@@ -3,4 +3,5 @@
 
 - include: firewall.yaml
 - include: git.yaml
+- include: packages.yaml
 
