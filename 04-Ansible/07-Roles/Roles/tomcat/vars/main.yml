@@ -1,0 +1,6 @@
+---
+# vars file for tomcat
+doc_tomcat: "/opt/SP/apps/tomcat"
+doc_root: "/var/www/html"
+admin: "Tomcat-Deployment-Test-01"
+tomcat_url: "https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.59/bin/apache-tomcat-8.5.59.tar.gz"

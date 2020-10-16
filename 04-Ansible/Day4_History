@@ -1,0 +1,295 @@
+    1  ls
+    2  cat inventory 
+    3  ansible 172.31.0.101 -i inventory -u vagrant -m ping -k 
+    4  ls -ltr  /root/.ssh/
+    5  ssh vagrant@172.31.0.101 
+    6  ls -ltr  /root/.ssh/
+    7  cat /root/.ssh/known_hosts 
+    8  ansible 172.31.0.101 -i inventory -u vagrant -m ping -k 
+    9  ssh vagrant@172.31.0.102
+   10  ansible 172.31.0.102 -i inventory -u vagrant -m ping -k 
+   11  ansible all -i inventory -u vagrant -m ping -k 
+   12  ansible 172.31.0.100 -i inventory -u vagrant -m ping -k 
+   13  ls
+   14  vim inventory 
+   15  ansible all -i inventory -u vagrant -m ping -k 
+   16  ansible web -i inventory -u vagrant -m ping -k 
+   17  ansible db -i inventory -u vagrant -m ping -k 
+   18  ls
+   19  vim inventory 
+   20  ansible web -i inventory -u vagrant -m ping -k 
+   21  vim inventory 
+   22  ansible web -i inventory -u vagrant -m ping -k 
+   23  ls
+   24  vim inventory 
+   25  ansible web:db -i inventory -u vagrant -m ping -k 
+   26  ls
+   27  vim 
+   28  ls
+   29  vim inventory 
+   30  ls
+   31  ansible web:db -i inventory -u vagrant -m ping -k 
+   32  vim inventory 
+   33  ansible web:db -i inventory -u vagrant -m ping -k 
+   34  ssh vagrant@172.31.0.100
+   35  ansible web:db -i inventory -u vagrant -m ping -k 
+   36  cat inventory 
+   37  ansible 'web:&db' -i inventory -u vagrant -m ping -k 
+   38  ansible 'web:&ansible' -i inventory -u vagrant -m ping -k 
+   39  cat inventory 
+   40  ls
+   41  vim README.md
+   42  ls
+   43  cd ..
+   44  ls
+   45  cd ..
+   46  ls
+   47  git add . ; git commit -m "Ansible"; git push 
+   48  ls
+   49  cd 04-Ansible/
+   50  ls
+   51  cd 01-Inventory/
+   52  ls
+   53  cat README.md 
+   54  ls
+   55  vim inventory 
+   56  ls
+   57  cp -rf README.md inventory 
+   58  ls
+   59  vim inventory 
+   60  ls
+   61  cat README.md 
+   62  ansible Prod -i inventory -u vagrant -m ping -k
+   63  ls
+   64  ansible UAT -i inventory -u vagrant -m ping -k
+   65  ls
+   66  cat inventory 
+   67  ansible WebServer -i inventory -u vagrant -m ping -k
+   68  ls
+   69  cat inventory 
+   70  ansible 'WebServer:&Prod' -i inventory -u vagrant -m ping -k
+   71  ls
+   72  cat inventory 
+   73  ansible 'WebServer:&UAT' -i inventory -u vagrant -m ping -k
+   74  ls
+   75  cat inventory 
+   76  ansible 'WebServer:&Prod:!Ansible' -i inventory -u vagrant -m ping -k
+   77  ls
+   78  vim inventory 
+   79  ansible DC-Apps -i inventory -u vagrant -m ping -k
+   80  ls
+   81  vim inventory 
+   82  s
+   83  ansible DC-Apps -i inventory -m ping 
+   84  ls
+   85  vim inventory 
+   86  ansible DC-Apps -i inventory -m ping 
+   87  vim inventory 
+   88  ansible DC-Apps -i inventory -m ping 
+   89  vim inventory 
+   90  ansible DC-Apps -i inventory -m ping 
+   91  vim inventory 
+   92  ansible DC-Apps -i inventory -m ping 
+   93  ls
+   94  vim inventory 
+   95  ansible DC-Apps -i inventory -m ping 
+   96  ls
+   97  cat inventory 
+   98  ls
+   99  cd ..
+  100  ls
+  101  cd ..
+  102  ls
+  103  ping 172.31.0.100
+  104  git add . ; git commit -m "Ansible-Inventory"; git push 
+  105  ls
+  106  ansible-doc -l 
+  107  ansible-doc ping
+  108  ls
+  109  cd 04-Ansible/
+  110  ls
+  111  cp -rf 02-Adhoc-Commands
+  112  mkdir 02-Adhoc-Commands
+  113  ls
+  114  vim 02-Adhoc-Commands/inventory
+  115  l
+  116  df -h 
+  117  ansible web -i 02-Adhoc-Commands/inventory -m command -a 'df -h'
+  118  uname -a 
+  119  ansible web -i 02-Adhoc-Commands/inventory -m command -a 'uname -a'
+  120  cat /etc/*-release 
+  121  ansible web -i 02-Adhoc-Commands/inventory -m command -a 'cat /etc/*-release'
+  122  ansible web -i 02-Adhoc-Commands/inventory -m command -a 'cat /etc/os-release'
+  123  ansible web -i 02-Adhoc-Commands/inventory -m command -a 'cat /etc/*-release'
+  124  ansible web -i 02-Adhoc-Commands/inventory -m shell -a 'cat /etc/*-release'
+  125  ls
+  126  history 
+  127  ls
+  128  cd 02-Adhoc-Commands/
+  129  ls
+  130  vim README.md
+  131  ls
+  132  cd ../../
+  133  git add . ; git commit -m "Ansible-AdHoc-Commands"; git push 
+  134  ls
+  135  cd 04-Ansible/
+  136  ls
+  137  cp -rf 02-Adhoc-Commands 03-Ansible-Config
+  138  ls
+  139  cd 03-Ansible-Config/
+  140  ls
+  141  mv inventory hosts
+  142  ls
+  143  ansible all -i hosts -m ping 
+  144  rm -rf /root/.ssh/known_hosts 
+  145  ansible all -i hosts -m ping 
+  146  rm -rf /root/.ssh/known_hosts 
+  147  ls
+  148  vi /etc/ansible/ansible.cfg 
+  149  ansible all -i hosts -m command 'df -h ' 
+  150  ansible all -i hosts -m command -a 'df -h ' 
+  151  ls
+  152  vim ansible.cfg
+  153  ansible all -m command -a 'df -h ' 
+  154  vim ansible.cfg
+  155  ls -ltr /root/.ssh/
+  156  ansible all -m command -a 'df -h ' 
+  157  ls -ltr /root/.ssh/
+  158  cat /root/.ssh/known_hosts 
+  159  ls
+  160  vim ansible.cfg 
+  161  ansible all -m command -a 'uname -a' 
+  162  ansible-doc apt 
+  163  ls
+  164  ansible all -m apt -a 'name=ntp state=present' 
+  165  ansible all -m apt -a 'name=ntp state=present' -s 
+  166  ls
+  167  ansible all -m command -a 'uname -a' 
+  168  ansible all -m apt -a 'name=ntp state=present' -s 
+  169  ls
+  170  cat /etc/ansible/ansible.cfg 
+  171  ls
+  172  vim ansible.cfg 
+  173  ls
+  174  ansible all -m apt -a 'name=ntp state=absent' 
+  175  ls
+  176  rm README.md 
+  177  ls
+  178  cd ..
+  179  ls
+  180  cd 03-Ansible-Config/
+  181  ls
+  182  mkdir Project-A Project-B
+  183  ls
+  184  mv ansible.cfg hosts Project-A/
+  185  ls
+  186  cp -rf Project-A/* Project-B/
+  187  ls
+  188  cd Project-B/
+  189  ls
+  190  vim ansible.cfg 
+  191  ls
+  192  vim hosts 
+  193  ls
+  194  ansible all -m ping  
+  195  cd ../
+  196  ls
+  197  cd Project-A/
+  198  ansible all -m ping  
+  199  cd ..
+  200  ls
+  201  cd ..
+  202  ls
+  203  cd ..
+  204  ls
+  205  git add . ; git commit -m "Ansible-Config"; git push 
+  206  ls
+  207  cd 04-Ansible/
+  208  ls
+  209  history > Day4_History
+  210  cd ..
+  211  git add . ; git commit -m "Ansible-Config-History"; git push 
+  212  ls
+  213  cd 04-Ansible/
+  214  ls
+  215  cd 03-Ansible-Config/Project-A/
+  216  ansible -m ping  
+  217  ansible all -m ping  
+  218  cat hosts 
+  219  lls
+  220  ls
+  221  cd ..
+  222  ls
+  223  cd ..
+  224  ls
+  225  cp -rf 03-Ansible-Config/Project-A 04-Playbook
+  226  ls
+  227  cd 04-Playbook/
+  228  ls
+  229  vim hosts
+  230  ls
+  231  vim playbook.yaml
+  232  ls
+  233  ansible-playbook playbook.yaml 
+  234  cat playbook.yaml 
+  235  vim playbook.yaml 
+  236  ansible-playbook playbook.yaml 
+  237  vim playbook.yaml 
+  238  ansible-playbook playbook.yaml 
+  239  vim playbook.yaml 
+  240  ansible-playbook playbook.yaml 
+  241  ls
+  242  cd ..
+  243  ls
+  244  history > Day4_History 
+  245  cd ..
+  246  ls
+  247  git add . ; git commit -m "Ansible-Playbook"; git push 
+  248  ls
+  249  cd 04-Ansible/
+  250  ls
+  251  cp -rf 04-Playbook 05-Deployment
+  252  ls
+  253  cd 05-Deployment/
+  254  ls
+  255  vim playbook.yaml 
+  256  ls
+  257  vim playbook.yaml 
+  258  ls
+  259  mkdir files 
+  260  ls
+  261  echo "Welecome to the world of Ansible" > files/index.html
+  262  ls
+  263  ansible-playbook playbook.yaml 
+  264  ls
+  265  kls
+  266  ls
+  267  mkdir templates
+  268  ls
+  269  vim templates/info.j2
+  270  ls
+  271  vim playbook.yaml 
+  272  ls
+  273  ansible-playbook playbook.yaml 
+  274  ls
+  275  vim playbook.yaml 
+  276  ls
+  277  vim templates/info.j2 
+  278  ls
+  279  ansible 172.31.0.101 -m setup 
+  280  ls
+  281  ansible-playbook playbook.yaml 
+  282  ls
+  283  vim playbook.yaml 
+  284  ls
+  285  vim templates/info.j2 
+  286  ansible-playbook playbook.yaml 
+  287  ls
+  288  vim playbook.yaml 
+  289  sl
+  290  ls
+  291  ansible-playbook playbook.yaml 
+  292  ls
+  293  cd ..
+  294  ls
+  295  history > Day4_History 
