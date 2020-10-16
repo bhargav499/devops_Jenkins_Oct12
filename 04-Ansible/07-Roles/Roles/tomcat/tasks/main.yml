@@ -15,7 +15,11 @@
 - name: Deploy Petclinic War
   copy: src=files/petclinic.war  dest={{doc_tomcat}}/webapps/ mode=0644
 
-- name: Deploy Custom Info web Page
-  template: src=templates/info.j2 dest={{doc_root}}/info.html
+- name: Deploy Jenkins Web Page
+  copy: src=files/jenkins.html dest={{doc_root}}/index.html
   notify:
   - Restart Tomcat
+
+- name: Deploy Custom Info web Page
+  template: src=templates/info.j2 dest={{doc_root}}/info.html
+

@@ -1,0 +1,10 @@
+---
+
+- name: Docker Common Packages 
+  apt: name={{item}} state=present
+
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
