@@ -4,6 +4,7 @@
 # Update3 : Deploy Template Info.j2 Web Page
 # Update4 : Local Varibales 
 # Update5 : Smart Playbook with Conditions
+# Update6 : Download Background Image.
 
 
 - hosts: web:db
@@ -31,7 +32,9 @@
 
   - name: Deploy Custom Index Web Page 
     copy: src=files/index.html dest={{doc_root}}/index.html
-
+  
+  - name: Download Background Image. 
+    get_url: url="https://images4.alphacoders.com/228/thumb-1920-22896.png" dest={{doc_root}}/background.jpg mode=0755
 
   - name: Deploy Template Info.j2 Web Page
     template: src=templates/info.j2 dest={{doc_root}}/info.html
